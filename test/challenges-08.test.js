@@ -20,7 +20,8 @@ describe("Challenge08-01", () => {
 });
 
 describe("Challenge08-02", () => {
-  test.skip("Get-recipe-key", () => {
+  // test.skip("Get-recipe-key", () => {
+  test("Get-recipe-key", () => {
     let recipeInfo = {
       name: "pizza",
       ingredients: ["bread", "tomato", "chicken", "mayo"],
@@ -37,16 +38,17 @@ describe("Challenge08-02", () => {
 });
 
 describe("Challenge08-03", () => {
-  test.skip("Get-Course-Name", () => {
+  // test.skip("Get-Course-Name", () => {
+  test("Get-Course-Name", () => {
     expect(getInfo(courses).coursesName[0]).toEqual("Java");
     expect(getInfo(courses).coursesName.length).toStrictEqual(4);
-
     expect(getInfo(courses).studentsName.length).toStrictEqual(16);
   });
 });
 
 describe("Challenge08-04", () => {
-  test.skip("Get-Student-Names-And-Courses", () => {
+  // test.skip("Get-Student-Names-And-Courses", () => {
+  test("Get-Student-Names-And-Courses", () => {
     let test1 = ["Kalé", "Alisha", "Alphonso", "Briana"];
     let res1 = [
       { Student: "Kalé", course: "Python" },
