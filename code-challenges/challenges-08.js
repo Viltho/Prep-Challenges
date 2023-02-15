@@ -59,6 +59,11 @@ const customerAndAge = (obj) => {
 
 const getEntries = (obj) => {
   // write your code here
+  let names = [];
+  for (const [key, value] of Object.entries(obj)) {
+    names.push(`${key}: ${value}`);
+  }
+  return names;
 };
 // -------------------------------------------------------------------------------------------------------
 
@@ -100,9 +105,20 @@ const courses = [
 const getInfo = (arr) => {
   let coursesName = [];
   let studentsName = [];
-  // write your code here
 
-  return { coursesName, studentsName };
+  for (const course of arr) {
+    coursesName.push(course.course);
+    studentsName = studentsName.concat(course.Students);
+  }
+
+  let studentCoursePairs = [];
+  for (const course of arr) {
+    for (const student of course.Students) {
+      studentCoursePairs.push({ Student: student, course: course.course });
+    }
+  }
+
+  return { coursesName, studentsName, studentCoursePairs };
 };
 // -------------------------------------------------------------------------------------------------------
 
@@ -112,7 +128,7 @@ const getInfo = (arr) => {
 
 // The Head manager wants to get more organized info about some students, he wants you to find the students from the courses dataset
 // and return their info following the below structure
-//
+
 // Input: ['Kalé', 'Alisha','Alphonso', 'Briana']
 // Output: 
 // [
@@ -124,7 +140,43 @@ const getInfo = (arr) => {
 // ]
 
 const getStudents = (arr) => {
-  // write your code here
+  const courses = [
+    {
+      course: 'Java',
+      Instructor: 'David',
+      Students: ['Lincoln', 'Ruth', 'Briana', 'Suzy', 'Greta'],
+      GroupName: 'Stars',
+    },
+    {
+      course: 'JavaScript',
+      Instructor: 'Van',
+      Students: ['Alphonso', 'Daley', 'Dax', 'Karter', 'Jorja'],
+      GroupName: 'Nerd-ware',
+    },
+    {
+      course: 'Python',
+      Instructor: 'Delaney',
+      Students: ['Barney', 'Kalé', 'Alisha'],
+      GroupName: 'Whats-Up',
+    },
+    {
+      course: 'DotNet',
+      Instructor: 'Keanna',
+      Students: ['Oli', 'Gisselle', 'Pru'],
+      GroupName: 'Lol',
+    },
+  ];
+  const output = [];
+  for (let i = 0; i < arr.length; i++) {
+    for (const course of courses) {
+      for (const student of course.Students) {
+        if (arr[i].includes(student)) {
+          output.push({ Student: student, course: course.course });
+        }
+      }
+    }
+  }
+  return output;
 };
 //  ------------------------------------------------------------------------------------------------------
 
