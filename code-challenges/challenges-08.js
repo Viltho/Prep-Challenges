@@ -29,12 +29,8 @@
 const customerAndAge = (obj) => {
   // write your code here
   let names = [];
-  for (let i = 0; i < obj.length; i++) {
-    let x = Object.entries(obj)[i];
-    for ( let j = 1 ; j < Object.entries(obj)[i]; j++){
-      let y = Object.entries(obj)[i][j];
-      names.push(`Customer Name :${x}, Age :${y}`);
-    }
+  for (const [key, value] of Object.entries(obj)) {
+    names.push(`Customer Name :${key} , Age :${value}`);
   }
   return names;
 };
