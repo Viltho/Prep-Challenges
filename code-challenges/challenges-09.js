@@ -21,9 +21,13 @@
 const arrInc = (arr) => {
     let result = [];
     // write your code here
-    for (let i = 0; i < arr.length; i++) {
-        result.push(arr[i] + 10);
-    }
+    arr.forEach(element => {
+        result.push(element + 10);
+        
+    });
+    // for (let i = 0; i < arr.length; i++) {
+    //     result.push(arr[i] + 10);
+    // }
     return result;
 }
 // -------------------------------------------------------------------------------------------------------
@@ -43,9 +47,13 @@ const arrInc = (arr) => {
 const roundDecimals = (arr) => {
     // write your code here
     let result = [];
-    for (let i = 0; i < arr.length; i++) {
-        result.push(Math.round(arr[i]));
-    }
+    arr.forEach(element => {
+        result.push(Math.round(element));
+        
+    });
+    // for (let i = 0; i < arr.length; i++) {
+    //     result.push(Math.round(arr[i]));
+    // }
     return result;
 }
 // -------------------------------------------------------------------------------------------------------
@@ -116,15 +124,24 @@ const roundDecimals = (arr) => {
 
 const employeesBonus = (arr) => {
     // write your code here
-    for ( let i = 0; i < arr.length; i++) {
-        if (arr[i].workHours > 8) {
-            arr[i].salary = (parseInt(arr[i].salary.replace("$", "")) + 100) + "$";
+    arr.forEach(array => {
+        if (array.workHours > 8) {
+            array.salary = (parseInt(array.salary.replace("$", "")) + 100) + "$";
 
         } else {
-            arr[i].salary = (parseInt(arr[i].salary.replace("$", "")) + 50) + "$";
+            array.salary = (parseInt(array.salary.replace("$", "")) + 50) + "$";
 
         }
-    }
+    });
+    // for ( let i = 0; i < arr.length; i++) {
+        // if (arr[i].workHours > 8) {
+        //     arr[i].salary = (parseInt(arr[i].salary.replace("$", "")) + 100) + "$";
+
+        // } else {
+        //     arr[i].salary = (parseInt(arr[i].salary.replace("$", "")) + 50) + "$";
+
+        // }
+    // }
     return arr;
 }
 // -------------------------------------------------------------------------------------------------------
@@ -147,14 +164,24 @@ const employeesBonus = (arr) => {
 const mostExpensive = (budget, mouseArray, keyBoardArray) => {
     // write your code here'
     let maxPrice = 0;
-    for (let i = 0; i < mouseArray.length; i++) {
-        for (let j = 0; j < keyBoardArray.length; j++) {
-            const totalPrice = mouseArray[i] + keyBoardArray[j];
+    mouseArray.forEach(element => {
+        let x = element;
+        keyBoardArray.forEach(element => {
+            let y = element;
+            const totalPrice = x + y;
             if (totalPrice > maxPrice && totalPrice <= budget) {
                 maxPrice = totalPrice;
             }
-        }
-    }
+        });   
+    });
+    // for (let i = 0; i < mouseArray.length; i++) {
+    //     for (let j = 0; j < keyBoardArray.length; j++) {
+    //         const totalPrice = mouseArray[i] + keyBoardArray[j];
+    //         if (totalPrice > maxPrice && totalPrice <= budget) {
+    //             maxPrice = totalPrice;
+    //         }
+    //     }
+    // }
     return maxPrice;
 }
 
