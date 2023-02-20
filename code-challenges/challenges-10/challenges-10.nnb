@@ -1,0 +1,67 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "## Hacker Rank\n\nFor Thursdays you will be solving some selected challenges on HackerRank, please create an account if you don't have then\nFollow the links below:\nread them carefully and solve them then copy-paste your solution below in Code Block"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### **Required**:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Birthday Cake Candles](https://www.hackerrank.com/challenges/birthday-cake-candles/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let maxNumber = Math.max(...candles);\nlet i = 0;\nfor (const element of candles){\n    if (maxNumber == element){\n        i++;\n    }\n}\nreturn i;"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### **Optional**:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Compare The Triplets](https://www.hackerrank.com/challenges/compare-the-triplets/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let scoreAlice = 0;\nlet scoreBob = 0;\nfor ( let i = 0; i < a.length; i++){\n    if (a[i] > b[i]){\n        scoreAlice++;\n    }\n    else if (a[i] == b[i]){\n        scoreBob += 0;\n    }\n    else {\n        scoreBob++;\n    }\n}\nreturn [scoreAlice, scoreBob];"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Migratory Birds](https://www.hackerrank.com/challenges/migratory-birds/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const mode = {};\n  let max = 0, count = 0;\n\n  for(let i = 0; i < arr.length; i++) {\n    const item = arr[i];\n    \n    if(mode[item]) {\n      mode[item]++;\n    } else {\n      mode[item] = 1;\n    }\n    \n    if(count < mode[item]) {\n      max = item;\n      count = mode[item];\n    }\n  }\n   \n  return max;"
+            ],
+            "outputs": []
+        }
+    ]
+}
