@@ -40,17 +40,7 @@
 
 const objectCounter = (obj) => {
   // write your code here
-  const countedNames = obj.reduce((p, c) => {
-    if (c.votes_To == "Bailey") {
-      return p += 1;
-    }
-    else if (c.votes_To == "Jade") {
-      return p += 1;
-    }
-    else if (c.votes_To == "James") {
-      return p += 1;
-    }
-  }, 0);
+  const countedNames = obj.reduce((p, c) => p+=1, 0);
   return countedNames;
 }
 
