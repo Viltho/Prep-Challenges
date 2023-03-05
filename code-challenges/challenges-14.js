@@ -25,7 +25,9 @@
 
 const LastWord = (str) => {
     // write your code here
-    return str.split(' ').at(-1);
+    // return str.split(' ').at(-1);
+    let z = str.lastIndexOf(" ") + 1;
+    return str.slice(z);
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -87,8 +89,10 @@ const replaceWords = (str) => {
 
 const arrToStr = (arr) => {
     // write your code here
-    arr[4] += ",";
-    return arr.join(' ');
+    for (let i = 5; i < arr.length + 1; i += 5) {
+      arr[i-1] += ",";
+    }
+    return arr.join(" ");
 }
 // -------------------------------------------------------------------------------------------------------
 
