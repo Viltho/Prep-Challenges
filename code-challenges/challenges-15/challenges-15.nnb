@@ -24,7 +24,7 @@
         {
             "language": "javascript",
             "source": [
-                "const counts = new Map([...new Set(arr)].map(x => [x, arr.filter(y => y === x).length]));\n  const maxCount = Math.max(...counts.values());\n  return arr.length - maxCount;\n"
+                "const counts = new Map([...new Set(arr)].map(x => [x, arr.filter(y => y === x).length]));\nconst maxCount = Math.max(...counts.values());\nreturn arr.length - maxCount;\n"
             ],
             "outputs": []
         },
