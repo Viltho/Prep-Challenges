@@ -1,0 +1,124 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "## Hacker Rank\n\nFor Thursdays you will be solving some selected challenges on HackerRank, please create an account if you don't have then\nFollow the links below:\nread them carefully and solve them then copy-paste your solution below in Code Block"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### **Required**:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Append And Delete](https://www.hackerrank.com/challenges/append-and-delete/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                    const commonPrefixLen = (() => {
+                     let len = 0;
+                       while (len < s.length && len < t.length && s[len] === t[len]) len++;
+                      return len;
+                      })();
+                       const requiredSteps = s.length + t.length - 2 * commonPrefixLen;
+                      return requiredSteps <= k && (requiredSteps % 2 === k % 2 || k >= s.length + t.length) ? 'Yes' : 'No';
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### **Optional**:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Encryption](https://www.hackerrank.com/challenges/encryption/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                   s = s.replace(/\s/g, ''); 
+                    const L = s.length;
+                    const rootL = Math.ceil(Math.sqrt(L));
+                    let rows = rootL;
+                    let columns = rootL;
+                    while (rows * columns < L) {
+                    if (columns < rootL) {
+                    columns++;
+                    } else {
+                    rows++;
+                      }
+                    }
+                    let encoded = '';
+                    for (let i = 0; i < columns; i++) {
+                        let columnText = '';
+                        for (let j = 0; j < rows; j++) {
+                            const index = j * columns + i;
+                            if (index < L) {
+                                columnText += s[index];
+                            }
+                        }
+                        encoded += columnText + ' ';
+                    }
+                    return encoded.trim();
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [The Time In Words](https://www.hackerrank.com/challenges/the-time-in-words/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                    const words = [
+        "o' clock",
+        'one', 'two', 'three', 'four', 'five',
+        'six', 'seven', 'eight', 'nine', 'ten',
+        'eleven', 'twelve', 'thirteen', 'fourteen', 'quarter',
+        'sixteen', 'seventeen', 'eighteen', 'nineteen', 'twenty',
+        'twenty one', 'twenty two', 'twenty three', 'twenty four', 'twenty five',
+        'twenty six', 'twenty seven', 'twenty eight', 'twenty nine', 'half'
+            ];
+            if (m === 0) {
+                return `${words[h]} ${words[m]}`;
+            } else if (m <= 30) {
+                if (m === 1) {
+                    return `${words[m]} minute past ${words[h]}`;
+                } else if (m === 15) {
+                    return `quarter past ${words[h]}`;
+                } else if (m === 30) {
+                    return `half past ${words[h]}`;
+                } else {
+                    return `${words[m]} minutes past ${words[h]}`;
+                }
+            } else {
+                const minutesTo = 60 - m;
+                if (minutesTo === 15) {
+                    return `quarter to ${words[h + 1]}`;
+                } else {
+                    return `${words[minutesTo]} minutes to ${words[h + 1]}`;
+                }
+            }
+            ],
+            "outputs": []
+        }
+    ]
+}

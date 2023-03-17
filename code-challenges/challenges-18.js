@@ -15,9 +15,7 @@
 //
 
 const wordLength = (str) => {
-
     const x = str.replace(/[^\w\s]/g, '').split(' ');
-
     const y = Math.floor(x.length / 2);
     const z = x[y].split('-');
     return z[0].length;
